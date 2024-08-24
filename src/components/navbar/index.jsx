@@ -22,7 +22,7 @@ const Navbar = () => {
           <Link to="/partnership">
             <p className="hover:text-red-700">Partnership</p>
           </Link>
-          <Link to="/merch">
+          <Link to="/merchandise">
             <p className="hover:text-red-700">Merchandise</p>
           </Link>
         </div>

@@ -1,8 +1,11 @@
 import React from 'react'
+import OurMerchandise from './partials/Main'
 
 const Merchandise = () => {
   return (
-    <div>Merchandise</div>
+    <div>
+      <OurMerchandise />
+    </div>
   )
 }
 
