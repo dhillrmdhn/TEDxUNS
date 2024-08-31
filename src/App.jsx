@@ -10,22 +10,23 @@ import Register from "./pages/auth/register";
 import Dashboard from "./pages/dashboard";
 import Payment from "./pages/payment";
 import Merchandise from "./pages/merchandise";
+import ComingSoon from "./pages/soon";
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/" element={<ComingSoon />} />
+        {/* <Route path="/events" element={<Events />} />
         <Route path="/partnership" element={<Partnership />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/payment" element={<Payment />} />
-        <Route path="/merchandise" element={<Merchandise />} />
+        <Route path="/merchandise" element={<Merchandise />} /> */}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };
