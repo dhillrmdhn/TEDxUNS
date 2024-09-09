@@ -9,7 +9,7 @@ const Event = () => {
             Are you ready for our Main Event?
           </h1>
         </div>
-        <div className="mt-5 border border-red-700 p-5 rounded-3xl flex items-center">
+        <div className="mt-5 border border-red-700 p-5 rounded-3xl flex items-center" data-aos="flip-up">
           <div className="w-[60%] space-y-6">
             <h4 className="text-h5 font-bold">
               <span className="text-red-700">TEDx </span>Sebelas Maret

@@ -11,22 +11,37 @@ import Dashboard from "./pages/dashboard";
 import Payment from "./pages/payment";
 import Merchandise from "./pages/merchandise";
 import ComingSoon from "./pages/soon";
+import DashboardAdmin from "./pages/admin/dashboard";
+import DaftarPeserta from "./pages/admin/daftarPeserta";
+import DaftarPembayaran from "./pages/admin/daftarPembayaran";
 
 const App = () => {
   return (
     <Router>
-      {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<ComingSoon />} />
-        {/* <Route path="/events" element={<Events />} />
-        <Route path="/partnership" element={<Partnership />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/merchandise" element={<Merchandise />} /> */}
+        <Route
+          path="/*"
+          element={
+            <>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/partnership" element={<Partnership />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/payment" element={<Payment />} />
+                <Route path="/merchandise" element={<Merchandise />} />
+              </Routes>
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/admin/*" element={<DashboardAdmin />} />
+        <Route path="/admin/daftar-peserta" element={<DaftarPeserta />} />
+        <Route path="/admin/verifikasi-pembayaran" element={<DaftarPembayaran />} />
       </Routes>
-      {/* <Footer /> */}
     </Router>
   );
 };
