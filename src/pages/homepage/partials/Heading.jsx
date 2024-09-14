@@ -1,5 +1,6 @@
 import React from "react";
 import Background from "@assets/videos/ComingsoonBackground.mp4";
+import Logo from "@icon/TEDxLogo.png";
 
 const Heading = () => {
   return (
@@ -11,26 +12,10 @@ const Heading = () => {
         muted
         className="absolute w-full h-full object-cover z-0"
       />
-      <div className="w-[90%] mx-auto space-y-5">
-        <div
-          className="text-red-700"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <h1 className="text-h1 font-bold">
-            TEDx{" "}
-            <span className="text-white">
-              Sebelas Maret <br /> University
-            </span>
-          </h1>
-        </div>
-        <div data-aos="fade-up" data-aos-duration="1500">
-          <h2 className="text-h5 text-white">The Education of the Future</h2>
-        </div>
-        <div className="pt-5" data-aos="fade-up" data-aos-duration="2000">
-          <button className="text-white bg-red-700 px-4 py-2 rounded-xl hover:bg-red-800">
-            See u at The Event
-          </button>
+      <div className="relative flex flex-col min-h-screen justify-center items-center">
+        <div className="text-center">
+          <h1 className="text-[13rem] font-bold text-red-700 leading-none">TEDx</h1>
+          <h3 className="text-h2 text-white">Sebelas Maret University</h3>
         </div>
       </div>
     </div>

@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Helvetica", "Arial", "sans-serif"],
+      },
       fontSize: {
         h1: ["64px", "72px"],
         h2: ["56px", "64px"],
@@ -14,6 +17,26 @@ export default {
         h4: ["40px", "48px"],
         h5: ["32px", "40px"],
         p: ["16px", "24px"],
+      },
+      container: {
+        padding: {
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
+        },
+      },
+      colors: {
+        red: "#b91c1c",
+      },
+      backgroundImage: {
+        "about-section":
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/assets/images/background/AboutBackground.jpg')",
+        "event-section":
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)), url('/src/assets/images/background/MainEventBackground.jpg')",
+        "speakers-section":
+          "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url('/src/assets/images/background/SpeakersBackground.jpg')",
       },
     },
   },
