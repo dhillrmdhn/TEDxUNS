@@ -5,7 +5,7 @@ export const events = [
     id: 1,
     title: "Welcoming Party",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis recusandae perferendis, adipisci natus est iste?",
+      'Finding X was a campaign to spread the word about TEDxUNS among UNS students before our staff recruitment. We had placed mysterious X posters in busy spots around UNS. With the tagline "Find the-X", we wanted UNS students to hunt for these X posters. Exciting prizes awaited those who successfully found them. Those who successfully found them all had a chance to win exciting prizes. By taking part in this fun initiative, students could not only find the X posters but also learn more about the TEDxUNS community.',
     imgSrc: [
       aboutBackground,
       "https://i.ibb.co.com/w4wS4vv/ted-logo-3704-A5-CF1-F-seeklogo-com.png",

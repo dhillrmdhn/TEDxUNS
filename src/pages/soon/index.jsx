@@ -6,7 +6,7 @@ import Background from "../../assets/videos/ComingsoonBackground.mp4";
 
 const ComingSoon = () => {
   const { days, hours, minutes, seconds } = useCountdown(
-    "Sep 16, 2024 23:59:59"
+    "Oct 7, 2024 23:59:59"
   );
   const formatNumber = (number) => String(number).padStart(2, "0");
 
