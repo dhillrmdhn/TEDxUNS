@@ -1,12 +1,15 @@
-import React from 'react'
-import Form from './partials/Form'
+import React from "react";
+import Form from "./partials/Form";
 
 const Login = () => {
   return (
-    <div className='bg-gradient-to-r from-black from-50% to-red-800'>
+    <div className="min-h-screen grid grid-cols-2">
+      <div className="bg-red"></div>
+      <div className="bg-black flex px-20">
         <Form />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

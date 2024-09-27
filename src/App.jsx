@@ -14,6 +14,7 @@ import ComingSoon from "./pages/soon";
 import DashboardAdmin from "./pages/admin/dashboard";
 import DaftarPeserta from "./pages/admin/daftarPeserta";
 import DaftarPembayaran from "./pages/admin/daftarPembayaran";
+import DetailEvents from "./pages/detailEvents";
 
 const App = () => {
   return (
@@ -23,10 +24,11 @@ const App = () => {
           path="/*"
           element={
             <>
-              {/* <Navbar /> */}
+              <Navbar />
               <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="/events" element={<Events />} />
+                <Route path="/events/:slug" element={<DetailEvents />} />
                 <Route path="/partnership" element={<Partnership />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />

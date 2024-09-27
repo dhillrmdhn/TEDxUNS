@@ -28,3 +28,13 @@ html {
   width: 80%;
   text-align: center;
 }
+
+.swiper-button-next {
+  color: #ffffff;
+  right: 10px
+}
+
+.swiper-button-prev {
+  color: #ffffff;
+  left: 10px;
+}
