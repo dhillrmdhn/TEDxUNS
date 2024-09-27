@@ -24,19 +24,19 @@ const App = () => {
           path="/*"
           element={
             <>
-              <Navbar />
+              {/* <Navbar /> */}
               <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/events" element={<Events />} />
+                <Route path="/" element={<ComingSoon />} />
+                {/* <Route path="/events" element={<Events />} />
                 <Route path="/events/:slug" element={<DetailEvents />} />
                 <Route path="/partnership" element={<Partnership />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/payment" element={<Payment />} />
-                <Route path="/merchandise" element={<Merchandise />} />
+                <Route path="/merchandise" element={<Merchandise />} /> */}
               </Routes>
-              <Footer />
+              {/* <Footer /> */}
             </>
           }
         />
