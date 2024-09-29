@@ -17,30 +17,43 @@ const ComingSoon = () => {
         autoPlay
         loop
         muted
+        playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       />
       <div className="relative z-10 flex flex-col min-h-screen w-full justify-center items-center bg-black bg-opacity-50 text-white">
         <div className="w-[90%] flex flex-col">
           <div className="flex flex-col space-y-0 md:space-y-5">
-            <img src={Logo} className="w-[200px] md:w-[350px] mb-5" alt="Logo" />
+            <img
+              src={Logo}
+              className="w-[200px] md:w-[350px] mb-5"
+              alt="Logo"
+            />
             <h1 className="text-h3 md:text-[80px] font-bold">Coming Soon</h1>
             <p className="text-[20px] md:text-h4">We are working on it</p>
           </div>
           <div className="mt-10 flex font-sans text-center space-x-7">
             <div className="md:border md:p-5 rounded-xl">
-              <h4 className="text-h3 md:text-h1 font-bold">{formatNumber(days)}</h4>
+              <h4 className="text-h3 md:text-h1 font-bold">
+                {formatNumber(days)}
+              </h4>
               <p className="text-[20px] font-thin">Days</p>
             </div>
             <div className="md:border md:p-5 rounded-xl">
-              <h4 className="text-h3 md:text-h1 font-bold">{formatNumber(hours)}</h4>
+              <h4 className="text-h3 md:text-h1 font-bold">
+                {formatNumber(hours)}
+              </h4>
               <p className="text-[20px] font-thin">Hours</p>
             </div>
             <div className="md:border md:p-5 rounded-xl">
-              <h4 className="text-h3 md:text-h1 font-bold">{formatNumber(minutes)}</h4>
+              <h4 className="text-h3 md:text-h1 font-bold">
+                {formatNumber(minutes)}
+              </h4>
               <p className="text-[20px] font-thin">Minutes</p>
             </div>
             <div className="md:border md:p-5 rounded-xl">
-              <h4 className="text-h3 md:text-h1 font-bold">{formatNumber(seconds)}</h4>
+              <h4 className="text-h3 md:text-h1 font-bold">
+                {formatNumber(seconds)}
+              </h4>
               <p className="text-[20px] font-thin">Seconds</p>
             </div>
           </div>
@@ -49,22 +62,13 @@ const ComingSoon = () => {
               <p>Follow us for more insights and updates!</p>
               <div className="flex gap-5 mt-2 text-[24px]">
                 <a
-                  href=""
-                  className="hover:text-red-700 transition durations-300"
+                  href="https://www.instagram.com/tedxuns2024/"
+                  target="_blank"
                 >
-                  <FaInstagram />
-                </a>
-                <a
-                  href=""
-                  className="hover:text-red-700 transition durations-300"
-                >
-                  <FaTwitter />
-                </a>
-                <a
-                  href=""
-                  className="hover:text-red-700 transition durations-300"
-                >
-                  <FaFacebook />
+                  <div className="text-[#bfbfbf] text-[14px] md:text-[18px] flex border p-2 px-7 gap-3 items-center rounded-3xl hover:bg-red transition duration-300 ease-in hover:border-none">
+                    <FaInstagram />
+                    Instagram @tedxuns2024
+                  </div>
                 </a>
               </div>
             </div>

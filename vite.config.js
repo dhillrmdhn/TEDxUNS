@@ -4,6 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  assetsInclude: ['**/*.JPG', '**/*.png'],
   resolve: {
     alias: {
       "@data": path.resolve(__dirname, "src/data"),
