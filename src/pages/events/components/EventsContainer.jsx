@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 const EventsContainer = ({ title, description, imgSrc }) => {
   return (
     <div
-      className={`border-2 border-red-700 p-5 rounded-3xl text-center space-y-5 transition duration-300`}
+      className={`border-2 border-red-700 p-5 rounded-3xl text-center space-y-5 transition duration-300 h-[83vh]`}
     >
       <Swiper
         spaceBetween={10}
@@ -19,10 +19,10 @@ const EventsContainer = ({ title, description, imgSrc }) => {
         {Array.isArray(imgSrc) ? (
           imgSrc.map((src, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[270px]">
+              <div className="h-[290px] rounded-2xl">
                 <img
                   src={src}
-                  className="rounded-2xl mx-auto object-cover"
+                  className="rounded-2xl mx-auto w-full h-full object-cover"
                   alt={`${title} ${index}`}
                 />
               </div>

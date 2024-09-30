@@ -14,10 +14,10 @@ import WTX4 from "@images/past-events/welcoming-party/IMG_7338.JPG";
 import WTX5 from "@images/past-events/welcoming-party/IMG_7545.JPG";
 
 // Into the X
-import ITX1 from "@images/past-events/into-the-x/IMG_0038.JPG";
+import ITX1 from "@images/past-events/into-the-x/IMG_0416.JPG";
 import ITX2 from "@images/past-events/into-the-x/IMG_0040.JPG";
 import ITX3 from "@images/past-events/into-the-x/IMG_0155.JPG";
-import ITX4 from "@images/past-events/into-the-x/IMG_0416.JPG";
+import ITX4 from "@images/past-events/into-the-x/IMG_0038.JPG";
 import ITX5 from "@images/past-events/into-the-x/IMG_9786.JPG";
 import ITX6 from "@images/past-events/into-the-x/IMG_9862.JPG";
 
