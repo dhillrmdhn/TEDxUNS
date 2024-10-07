@@ -7,6 +7,8 @@ const InputText = ({
   onChange,
   value,
   name,
+  type = "text",
+  error,
 }) => {
   return (
     <div className="text-white-Normal w-full">
@@ -15,12 +17,14 @@ const InputText = ({
         className="w-full h-10 border rounded-xl text-[14px] md:text-p text-[#000000] outline-none font-Amiko pl-4"
         id={id}
         placeholder={placeholder}
-        type="text"
+        type={type}
         style={{ color: "black" }}
         onChange={onChange}
         name={name}
         value={value}
+        required
       />
+      {error && <p className="text-red-600 text-sm">{error}</p>}
     </div>
   );
 };

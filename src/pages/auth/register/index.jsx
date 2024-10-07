@@ -1,10 +1,18 @@
 import React from "react";
 import Form from "./partials/Form";
+import Background from "../../../assets/videos/BumperBackground.mp4";
 
 const Register = () => {
   return (
     <div className="min-h-screen grid grid-cols-2">
-      <div className="bg-red"></div>
+      <div className="relative">
+        <video
+          src={Background}
+          autoPlay
+          muted
+          className="absolute w-full h-full object-cover z-0"
+        />
+      </div>
       <div className="bg-black flex px-20">
         <Form />
       </div>
