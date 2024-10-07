@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 const EventsContainer = ({ title, description, imgSrc }) => {
   return (
     <div
-      className={`border-2 border-red-700 p-5 rounded-3xl text-center space-y-5 transition duration-300 h-[83vh]`}
+      className={`border-2 border-red-700 p-4 md:p-5 rounded-3xl text-center space-y-5 transition duration-300 h-[75vh] md:h-[83vh]`}
     >
       <Swiper
         spaceBetween={10}
@@ -19,7 +19,7 @@ const EventsContainer = ({ title, description, imgSrc }) => {
         {Array.isArray(imgSrc) ? (
           imgSrc.map((src, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[290px] rounded-2xl">
+              <div className="h-[200px] md:h-[290px] rounded-2xl">
                 <img
                   src={src}
                   className="rounded-2xl mx-auto w-full h-full object-cover"
@@ -30,7 +30,13 @@ const EventsContainer = ({ title, description, imgSrc }) => {
           ))
         ) : (
           <SwiperSlide>
-            <img src={imgSrc} className="rounded-2xl mx-auto" alt={title} />
+            <div className="h-[180px] md:h-[290px] rounded-2xl">
+              <img
+                src={imgSrc}
+                className="rounded-2xl mx-auto w-full h-full object-cover"
+                alt={title}
+              />
+            </div>
           </SwiperSlide>
         )}
         <div className="swiper-button-next"></div>
@@ -38,8 +44,10 @@ const EventsContainer = ({ title, description, imgSrc }) => {
       </Swiper>
 
       <div>
-        <h5 className="text-[22px] font-bold pb-3">{title}</h5>
-        <p className="text-[#bfbfbf] text-justify">{description}</p>
+        <h5 className="text-lg md:text-[22px] font-bold pb-3">{title}</h5>
+        <p className="text-[14.5px] md:text-base text-[#bfbfbf] text-justify">
+          {description}
+        </p>
       </div>
     </div>
   );

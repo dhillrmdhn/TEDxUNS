@@ -78,11 +78,13 @@ const Form = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-white w-full">
+    <div className="min-h-screen md:min-h-0 flex flex-col justify-center items-center text-white w-full mt-16 md:mt-0">
       <div className="space-y-6 w-full">
-        <div className="space-y-2">
-          <h1 className="text-h3 font-bold">Create an Account</h1>
-          <h3 className="text-[24px] text-[#bfbfbf]">Get Started Now!</h3>
+        <div className="space-y-2 text-center md:text-left">
+          <h1 className="text-h4 md:text-h3 font-bold">Create an Account</h1>
+          <h3 className="text-[20px] md:text-[30px] text-[#bfbfbf]">
+            Get Started Now!
+          </h3>
         </div>
         <div className="space-y-3">
           {inputFields.map((field) => (
@@ -102,13 +104,13 @@ const Form = () => {
         </div>
         <div className="space-y-8">
           <button
-            className="text-white bg-red-700 px-8 py-2 rounded-xl hover:bg-white hover:text-black transition duration-100 ease-in"
+            className="text-white bg-red-700 px-8 py-2 rounded-xl hover:bg-white hover:text-black transition duration-100 ease-in w-full md:w-auto"
             onClick={handleSubmit}
             disabled={isLoading}
           >
             {isLoading ? "Registering..." : "Register"}
           </button>
-          <div className="flex space-x-2">
+          <div className="flex justify-center md:justify-start space-x-2">
             <p>Have an account?</p>
             <div className="font-bold hover:text-red">
               <Link to="/login">Login Here</Link>

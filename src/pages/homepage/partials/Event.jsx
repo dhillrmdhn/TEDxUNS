@@ -3,14 +3,14 @@ import RedButton from "@components/button/RedButton";
 
 const Event = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-end bg-event-section bg-cover items-center text-white p-14">
-      <div className="w-full space-y-10">
-        <h1 className="text-h4 font-bold">
-          Are you ready for our <span className="text-red">Main Event ?</span>
+    <div className="min-h-screen flex flex-col justify-end bg-event-section bg-cover items-center text-white p-6 py-10 sm:p-14">
+      <div className="w-full space-y-5 md:space-y-10">
+        <h1 className="text-h5 sm:text-h4 font-bold">
+          Are you ready for our <span className="text-red">Main Event?</span>
         </h1>
-        <div className="w-full flex justify-between">
-          <div className="flex flex-col justify-between">
-            <h3 className="text-[30px] font-bold">
+        <div className="w-full flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0">
+          <div className="flex flex-col justify-between space-y-6 lg:space-y-0">
+            <h3 className="text-[24px] sm:text-[30px] font-bold">
               TEDxSebelas Maret University 2024: <br /> The Flavors of Wisdom
             </h3>
             <Date />
@@ -25,7 +25,7 @@ const Event = () => {
 
 const Date = () => {
   return (
-    <div className="flex space-x-10 text-[20px]">
+    <div className="flex space-x-10 text-[18px] sm:text-[20px]">
       <div className="text-[#bfbfbf] space-y-3">
         <p>Date</p>
         <p>Time</p>
@@ -42,21 +42,17 @@ const Date = () => {
 
 const Maps = () => {
   return (
-    <div>
+    <div className="lg:w-[45%] w-full mt-8 lg:mt-0">
       <iframe
         width="100%"
         height="300"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
-        marginheight="0"
-        marginwidth="0"
+        marginHeight="0"
+        marginWidth="0"
         id="gmap_canvas"
         src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Jl.%20Ir.%20Sutami%20No.36%20Surakarta+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-      ></iframe>{" "}
-      <script
-        type="text/javascript"
-        src="https://embedmaps.com/google-maps-authorization/script.js?id=d7f097f07722db889260cca6f66f0565268dccf4"
-      ></script>
+      ></iframe>
     </div>
   );
 };

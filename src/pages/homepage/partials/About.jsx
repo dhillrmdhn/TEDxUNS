@@ -15,7 +15,7 @@ const About = () => {
     <div
       className={`min-h-screen w-full bg-about-section bg-cover flex ${
         isTEDx ? "justify-end" : "justify-start"
-      } items-end p-14`}
+      } items-end p-6 sm:p-14`}
     >
       <motion.div
         key={isTEDx}
@@ -24,7 +24,7 @@ const About = () => {
         exit="exit"
         variants={transitionVariants}
         transition={{ duration: 0.5 }}
-        className="w-[550px]"
+        className="w-full sm:max-w-[550px]"
       >
         {isTEDx ? (
           <AboutTEDx isShow={setIsTEDx} />
@@ -40,13 +40,13 @@ const AboutTED = ({ isShow }) => {
   return (
     <div className="flex flex-col space-y-3">
       <div className="flex-col">
-        <h1 className="text-h4 text-white font-thin">Get to know</h1>
-        <h1 className="text-h1 text-white font-bold">
+        <h1 className="text-h5 sm:text-h4 text-white font-thin">Get to know</h1>
+        <h1 className="text-h3 sm:text-h1 text-white font-bold">
           <span className="text-red-700">TED</span> Organization
         </h1>
       </div>
-      <div className="bg-black rounded-3xl p-5">
-        <p className="text-white text-justify">
+      <div className="bg-black rounded-3xl p-4 sm:p-5">
+        <p className="text-white text-sm sm:text-base text-justify">
           TED merupakan organisasi internasional dengan misi untuk menyebarkan
           ide yang mampu menciptakan perbincangan, memperdalam pemahaman, serta
           membawa perubahan ke arah yang lebih baik bagi pendengarnya.
@@ -61,15 +61,15 @@ const AboutTED = ({ isShow }) => {
 
 const AboutTEDx = ({ isShow }) => {
   return (
-    <div className="flex flex-col items-end space-y-3">
+    <div className="flex flex-col items-start sm:items-end space-y-3">
       <div className="flex-col">
-        <h1 className="text-h4 text-white font-thin">Get to know</h1>
-        <h1 className="text-h1 text-white font-bold">
+        <h1 className="text-h5 sm:text-h4 text-white font-thin">Get to know</h1>
+        <h1 className="text-h3 sm:text-h1 text-white font-bold">
           <span className="text-red-700">TEDx</span> Sebelas Maret University
         </h1>
       </div>
-      <div className="bg-black rounded-3xl p-5">
-        <p className="text-white text-justify">
+      <div className="bg-black rounded-3xl p-4 sm:p-5">
+        <p className="text-white text-sm sm:text-base text-justify">
           TEDx adalah salah satu program dari TED untuk memperluas cakupan demi
           mewujudkan misi penyebaran ide ke seluruh dunia. “x”= Independently
           Organized TED Event, yaitu simbol kolaborasi antara TED dengan

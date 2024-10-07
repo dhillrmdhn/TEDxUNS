@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Speakers = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-white space-y-10 bg-speakers-section bg-cover">
+    <div className="min-h-screen flex flex-col justify-center items-center text-white space-y-10 py-10 bg-speakers-section bg-cover">
       <div>
         <h1 className="text-h4 font-bold">
           Our <span className="text-red-700">Speakers</span>

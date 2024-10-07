@@ -30,10 +30,11 @@ const Form = () => {
         if (response) {
           localStorage.setItem("token", response.token);
           localStorage.setItem(
-            "role",
+            "user",
             JSON.stringify({
-              role: response.user?.role,
+              role: response.user?.id_role,
               fullname: response.user?.fullname.split(" ")[0],
+              id: response.user?.id,
             })
           );
 
@@ -68,16 +69,16 @@ const Form = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-16">
       <ToastContainer />
       <form
-        className="min-h-screen flex flex-col justify-center items-center w-full text-white space-y-6"
+        className="min-h-screen md:min-h-0 flex flex-col justify-center items-center w-full text-white space-y-6"
         onSubmit={handleSubmit}
       >
         <div className="w-full space-y-6 rounded-3xl">
-          <div className="space-y-2">
-            <h1 className="text-h3 font-bold">Welcome Back!</h1>
-            <h3 className="text-[24px] text-[#bfbfbf]">
+          <div className="space-y-2 text-center md:text-left">
+            <h1 className="text-h4 md:text-h3 font-bold">Welcome Back!</h1>
+            <h3 className="text-lg md:text-[24px] text-[#bfbfbf]">
               Login to your account
             </h3>
           </div>
@@ -99,12 +100,12 @@ const Form = () => {
           </div>
           <div className="space-y-8">
             <button
-              className="text-white bg-red-700 px-8 py-2 rounded-xl hover:bg-white hover:text-black transition duration-100 ease-in font-bold"
+              className="text-white bg-red-700 px-8 py-2 rounded-xl hover:bg-white hover:text-black transition duration-100 ease-in font-bold w-full md:w-auto"
               type="submit"
             >
               {isLoading ? "Logging In..." : "Login"}
             </button>
-            <div className="flex space-x-2">
+            <div className="flex justify-center md:justify-start space-x-2">
               <p>Don't have an account?</p>
               <div className="font-bold hover:text-red">
                 <Link to="/register">Register here</Link>

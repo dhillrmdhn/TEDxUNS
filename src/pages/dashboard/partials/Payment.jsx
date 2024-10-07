@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 const Payment = () => {
   return (
     <div className="text-white flex w-full justify-center">
-      <div className="w-[90%] flex space-x-5 p-5 rounded-3xl bg-green-500">
+      <div className="w-[90%] flex items-center space-x-5 p-5 rounded-3xl bg-green-500">
         <div>
           <FaCheckCircle className="text-white" size={30} />
         </div>

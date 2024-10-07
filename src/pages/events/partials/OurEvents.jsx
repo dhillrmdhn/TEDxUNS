@@ -9,16 +9,16 @@ import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 
 const OurEvents = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center text-white space-y-10 p-14 py-10">
-      <h1 className="text-h4 font-bold">
+    <div className="min-h-screen flex flex-col justify-center text-white space-y-10 px-4 py-8 md:px-14 md:py-10 mt-16">
+      <h1 className="text-h5 md:text-h4 font-bold text-left">
         Past Events <br />
         <span className="text-red">TEDx</span> Sebelas Maret University
       </h1>
-      <div className="">
+      <div className="w-full">
         <div className="">
           <Swiper
-            slidesPerView={2}
-            spaceBetween={30}
+            slidesPerView={1}
+            spaceBetween={10}
             navigation={{
               prevEl: ".custom-prev",
               nextEl: ".custom-next",
@@ -26,10 +26,6 @@ const OurEvents = () => {
             modules={[Pagination, Navigation]}
             className="mySwiper"
             breakpoints={{
-              0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
               640: {
                 slidesPerView: 2,
                 spaceBetween: 20,
