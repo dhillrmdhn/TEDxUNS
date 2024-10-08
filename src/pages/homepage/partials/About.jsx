@@ -45,7 +45,7 @@ const AboutTED = ({ isShow }) => {
           <span className="text-red-700">TED</span> Organization
         </h1>
       </div>
-      <div className="bg-black rounded-3xl p-4 sm:p-5">
+      <div className="bg-black/50 rounded-3xl p-4 sm:p-5">
         <p className="text-white text-sm sm:text-base text-justify">
           TED merupakan organisasi internasional dengan misi untuk menyebarkan
           ide yang mampu menciptakan perbincangan, memperdalam pemahaman, serta
@@ -68,7 +68,7 @@ const AboutTEDx = ({ isShow }) => {
           <span className="text-red-700">TEDx</span> Sebelas Maret University
         </h1>
       </div>
-      <div className="bg-black rounded-3xl p-4 sm:p-5">
+      <div className="bg-black/50 rounded-3xl p-4 sm:p-5">
         <p className="text-white text-sm sm:text-base text-justify">
           TEDx adalah salah satu program dari TED untuk memperluas cakupan demi
           mewujudkan misi penyebaran ide ke seluruh dunia. “x”= Independently

@@ -1,7 +1,10 @@
 import React from "react";
 import RedButton from "@components/button/RedButton";
+import { useNavigate } from "react-router-dom";
 
 const Event = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex flex-col justify-end bg-event-section bg-cover items-center text-white p-6 py-10 sm:p-14">
       <div className="w-full space-y-5 md:space-y-10">
@@ -11,10 +14,16 @@ const Event = () => {
         <div className="w-full flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0">
           <div className="flex flex-col justify-between space-y-6 lg:space-y-0">
             <h3 className="text-[24px] sm:text-[30px] font-bold">
-              TEDxSebelas Maret University 2024: <br /> The Flavors of Wisdom
+              TEDxSebelas Maret University 2024: <br /> Presenting Main Event
             </h3>
             <Date />
-            <RedButton>Register Now!</RedButton>
+            <RedButton
+              onClick={() => {
+                navigate("/payment");
+              }}
+            >
+              Grab your early bird tickets today! Register now!
+            </RedButton>
           </div>
           <Maps />
         </div>
@@ -32,9 +41,9 @@ const Date = () => {
         <p>Place</p>
       </div>
       <div className="space-y-3">
-        <p>Monday, 31 February 2024</p>
-        <p>19.00 - 25.00</p>
-        <p>Bumi bagian barat</p>
+        <p>Saturday, 2 November 2024</p>
+        <p>To be announced</p>
+        <p>Indraprastha Ballroom - UNS INN</p>
       </div>
     </div>
   );
@@ -51,7 +60,7 @@ const Maps = () => {
         marginHeight="0"
         marginWidth="0"
         id="gmap_canvas"
-        src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Jl.%20Ir.%20Sutami%20No.36%20Surakarta+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=UNS%20INN%20Hotel%20Surakarta+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       ></iframe>
     </div>
   );

@@ -18,10 +18,12 @@ import DetailEvents from "./pages/detailEvents";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import FeatureSoon from "./pages/soon/featureSoon";
+import ScrollToTop from "./utils/ScrollToTop";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <ToastContainer />
       <Routes>
         <Route

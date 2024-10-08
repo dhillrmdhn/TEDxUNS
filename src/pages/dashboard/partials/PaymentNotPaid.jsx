@@ -8,21 +8,15 @@ const PaymentNotPaid = () => {
   return (
     <div className="text-white flex w-full justify-center">
       <div className="w-[90%] flex justify-between p-5 rounded-3xl bg-red-700 items-center">
-        <div className="flex space-x-5">
+        <div className="flex items-center space-x-5">
           <div>
             <MdCancel className="text-white" size={30} />
           </div>
           <div>
-            <h4 className="text-[20px] font-bold">
-              We haven't received your payment yet. Please make your payment
-              soon!
+            <h4 className="text-[18px] md:text-[20px] font-bold">
+              You're not registered as a participant for the event yet!
             </h4>
           </div>
-        </div>
-        <div>
-          <button className="text-black bg-white px-6 font-bold py-2 rounded-xl hover:bg-red-800" onClick={() => navigate("/payment")}>
-            Pay Now
-          </button>
         </div>
       </div>
     </div>

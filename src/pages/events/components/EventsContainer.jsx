@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 const EventsContainer = ({ title, description, imgSrc }) => {
   return (
     <div
-      className={`border-2 border-red-700 p-4 md:p-5 rounded-3xl text-center space-y-5 transition duration-300 h-[75vh] md:h-[83vh]`}
+      className={`min-h-[75vh] md:min-h-[85vh] border-2 border-red-700 p-4 md:p-5 rounded-3xl text-center space-y-5 backdrop-blur hover:bg-red`}
     >
       <Swiper
         spaceBetween={10}
@@ -15,11 +15,15 @@ const EventsContainer = ({ title, description, imgSrc }) => {
           prevEl: ".swiper-button-prev",
         }}
         modules={[Navigation]}
+        className="swiper-container"
       >
         {Array.isArray(imgSrc) ? (
           imgSrc.map((src, index) => (
-            <SwiperSlide key={index}>
-              <div className="h-[200px] md:h-[290px] rounded-2xl">
+            <SwiperSlide
+              key={index}
+              className="flex justify-center items-center"
+            >
+              <div className="h-[200px] md:h-[290px] flex-grow flex items-center">
                 <img
                   src={src}
                   className="rounded-2xl mx-auto w-full h-full object-cover"
@@ -29,8 +33,8 @@ const EventsContainer = ({ title, description, imgSrc }) => {
             </SwiperSlide>
           ))
         ) : (
-          <SwiperSlide>
-            <div className="h-[180px] md:h-[290px] rounded-2xl">
+          <SwiperSlide className="flex justify-center items-center">
+            <div className="h-[180px] md:h-[290px] flex-grow flex items-center">
               <img
                 src={imgSrc}
                 className="rounded-2xl mx-auto w-full h-full object-cover"

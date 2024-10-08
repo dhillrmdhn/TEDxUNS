@@ -43,6 +43,7 @@ const Form = () => {
 
           setTimeout(() => {
             navigate("/");
+            window.location.reload();
           }, 1500);
         }
       } catch (error) {

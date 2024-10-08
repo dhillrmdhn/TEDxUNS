@@ -15,7 +15,7 @@ const Event = () => {
           <div className="w-full space-y-6">
             <h4 className="text-h5 md:text-h4 font-bold">
               <span className="text-red-700">TEDx </span>Sebelas Maret
-              University 2024: Main Event
+              University 2024: Presenting Main Event
             </h4>
             <div className="flex space-x-5 md:flex-row">
               <div className="space-y-3 text-[#bfbfbf]">
@@ -24,9 +24,9 @@ const Event = () => {
                 <p>Place</p>
               </div>
               <div className="space-y-3 ml-0 md:ml-7">
-                <p>Monday, 31 February 2024</p>
-                <p>19.00 - 25.00</p>
-                <p>Bumi bagian barat</p>
+                <p>Saturday, 2 November 2024</p>
+                <p>To be announced</p>
+                <p>Indraprastha Ballroom - UNS INN</p>
               </div>
             </div>
             <div className="md:hidden">
@@ -64,7 +64,7 @@ const Maps = () => {
         marginHeight="0"
         marginWidth="0"
         id="gmap_canvas"
-        src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Jl.%20Ir.%20Sutami%20No.36%20Surakarta+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=UNS%20INN%20Hotel%20Surakarta+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       ></iframe>
     </div>
   );

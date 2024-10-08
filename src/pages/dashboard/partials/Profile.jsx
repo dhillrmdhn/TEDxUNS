@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import InputText from "../../../components/input/inputText";
-import { GetUserById } from "../../../services/userService";
+import { GetUserById, updateUser } from "../../../services/userService";
 import RedButton from "../../../components/button/RedButton";
+import { toast } from "react-toastify";
 
 const Profile = () => {
   const [data, setData] = useState({});
@@ -10,7 +11,8 @@ const Profile = () => {
     const getData = async () => {
       try {
         const response = await GetUserById();
-        setData(response);
+        const { password, ...userData } = response.user;
+        setData(userData);
       } catch (error) {
         console.log(error);
       }
@@ -19,16 +21,16 @@ const Profile = () => {
   }, []);
 
   const inputFields = [
-    { name: "name", label: "Name", value: data?.user?.fullname },
-    { name: "email", label: "Email", value: data?.user?.email },
-    { name: "address", label: "Address", value: data?.user?.address },
+    { name: "fullname", label: "Name", value: data?.fullname },
+    { name: "email", label: "Email", value: data?.email },
+    { name: "address", label: "Address", value: data?.address },
     {
-      name: "phone_number",
+      name: "phone",
       label: "Phone Number",
-      value: data?.user?.phone_number,
+      value: data?.phone_number,
     },
-    { name: "university", label: "University", value: data?.user?.university },
-    { name: "born", label: "Born", value: data?.user?.born },
+    { name: "university", label: "University", value: data?.university },
+    { name: "born", label: "Born", value: data?.born, type: "date" },
   ];
 
   const handleChange = (e) => {
@@ -37,14 +39,25 @@ const Profile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    toast.info("Updating profile...");
     try {
+      const response = await updateUser(data);
+      if (response) {
+        toast.success("Profile updated successfully");
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
     } catch (error) {
       console.log(error);
+      toast.error("Failed to update profile");
     }
+    console.log(data);
   };
 
   return (
-    <div className="text-white flex flex-col items-center justify-center space-y-7 p-4">
+    <div className="text-white flex flex-col items-center justify-center space-y-7 p-4 w-full">
       <div>
         <h3 className="text-h3 font-bold text-center">
           Your <span className="text-red-700">Profile</span>
@@ -59,13 +72,14 @@ const Profile = () => {
               label={field.label}
               onChange={handleChange}
               value={field.value}
+              type={field.type}
             >
               {field.label}
             </InputText>
           ))}
         </form>
         <div className="w-full flex justify-center">
-          <RedButton>Save Profile</RedButton>
+          <RedButton onClick={handleSubmit}>Save Profile</RedButton>
         </div>
       </div>
     </div>

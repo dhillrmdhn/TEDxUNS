@@ -78,7 +78,7 @@ const Form = () => {
   ];
 
   return (
-    <div className="min-h-screen md:min-h-0 flex flex-col justify-center items-center text-white w-full mt-16 md:mt-0">
+    <div className="min-h-screen md:min-h-0 flex flex-col justify-center items-center text-white w-full mt-16">
       <div className="space-y-6 w-full">
         <div className="space-y-2 text-center md:text-left">
           <h1 className="text-h4 md:text-h3 font-bold">Create an Account</h1>

@@ -37,7 +37,7 @@ const OurEvents = () => {
             }}
           >
             {events.map((event) => (
-              <SwiperSlide key={event.id}>
+              <SwiperSlide key={event.id} className="h-full">
                 <EventsContainer
                   title={event.title}
                   description={event.description}
