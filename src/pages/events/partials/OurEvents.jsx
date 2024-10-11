@@ -9,12 +9,12 @@ import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 
 const OurEvents = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center text-white space-y-10 px-4 py-8 md:px-14 md:py-10 mt-16">
+    <div className="flex flex-col justify-center text-white space-y-10 px-4 py-8 md:px-14 md:py-10 mt-16">
       <h1 className="text-h5 md:text-h4 font-bold text-left">
         Past Events <br />
         <span className="text-red">TEDx</span> Sebelas Maret University
       </h1>
-      <div className="w-full">
+      <div className="flex flex-col">
         <div className="">
           <Swiper
             slidesPerView={1}
@@ -37,7 +37,7 @@ const OurEvents = () => {
             }}
           >
             {events.map((event) => (
-              <SwiperSlide key={event.id} className="h-full">
+              <SwiperSlide key={event.id} className="">
                 <EventsContainer
                   title={event.title}
                   description={event.description}

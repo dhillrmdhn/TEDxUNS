@@ -25,3 +25,17 @@ export const register = async (data) => {
     console.log(error);
   }
 };
+
+export const logout = async () => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await axiosInstance.post("/logout", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

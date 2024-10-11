@@ -31,10 +31,18 @@ html {
 
 .swiper-button-next {
   color: #ffffff;
-  right: 10px
+  right: 10px;
 }
 
 .swiper-button-prev {
   color: #ffffff;
   left: 10px;
+}
+
+.custom-scrollbar {
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
 }

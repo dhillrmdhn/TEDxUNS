@@ -22,14 +22,11 @@ const Form = () => {
 
     if (isValid) {
       setIsLoading(true);
-      const loadingToastId = toast.info("Loading... Please wait", {
-        autoClose: false,
-      });
+      toast.info("Loading... Please wait")
 
       try {
         const response = await register(data);
         if (response) {
-          toast.dismiss(loadingToastId);
           toast.success(`Account successfully registered! Please log in.`);
 
           setTimeout(() => {
@@ -37,7 +34,6 @@ const Form = () => {
           }, 1500);
         }
       } catch (error) {
-        toast.dismiss(loadingToastId);
         console.log(error);
         toast.error("Register failed. Please check your credentials.");
       } finally {

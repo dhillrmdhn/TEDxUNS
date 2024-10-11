@@ -15,7 +15,7 @@ const Event = () => {
           <div className="w-full space-y-6">
             <h4 className="text-h5 md:text-h4 font-bold">
               <span className="text-red-700">TEDx </span>Sebelas Maret
-              University 2024: Presenting Main Event
+              University 2024: Behind the X-ynergy: Uncovering Both Sides
             </h4>
             <div className="flex space-x-5 md:flex-row">
               <div className="space-y-3 text-[#bfbfbf]">

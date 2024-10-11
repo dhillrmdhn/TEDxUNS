@@ -47,9 +47,9 @@ const AboutTED = ({ isShow }) => {
       </div>
       <div className="bg-black/50 rounded-3xl p-4 sm:p-5">
         <p className="text-white text-sm sm:text-base text-justify">
-          TED merupakan organisasi internasional dengan misi untuk menyebarkan
-          ide yang mampu menciptakan perbincangan, memperdalam pemahaman, serta
-          membawa perubahan ke arah yang lebih baik bagi pendengarnya.
+          TED is an international organization with a mission to spread ideas
+          that can create conversations, deepen understanding, and bring change
+          for the better for its listeners.
         </p>
       </div>
       <div>
@@ -70,15 +70,15 @@ const AboutTEDx = ({ isShow }) => {
       </div>
       <div className="bg-black/50 rounded-3xl p-4 sm:p-5">
         <p className="text-white text-sm sm:text-base text-justify">
-          TEDx adalah salah satu program dari TED untuk memperluas cakupan demi
-          mewujudkan misi penyebaran ide ke seluruh dunia. “x”= Independently
-          Organized TED Event, yaitu simbol kolaborasi antara TED dengan
-          institusi penyelenggara, misalnya universitas, kota, dan sebagainya.
-          TEDxUNS sendiri merupakan acara TEDx yang digarap secara independen
-          oleh mahasiswa/i Universitas Sebelas Maret dengan berbekalkan lisensi
-          dari TED Global sebagai prasyarat pengadaan acara. Tahun 2024
-          merupakan tahun kedua dari bangkitnya TEDxUNS setelah vakum selama 8
-          tahun, sejak tahun 2015.
+          TEDx is one of TED's programs aimed at expanding its reach to fulfill
+          the mission of spreading ideas globally. The 'x' stands for
+          Independently Organized TED Event, symbolizing the collaboration
+          between TED and the hosting institution, such as universities, cities,
+          and others. TEDxUNS itself is a TEDx event independently organized by
+          students of Universitas Sebelas Maret, supported by a license from TED
+          Global as a prerequisite for hosting the event. The year 2024 marks
+          the second year of TEDxUNS's revival after an 8-year hiatus, starting
+          from 2015.
         </p>
       </div>
       <RedButton onClick={() => isShow(false)}>Learn about TED</RedButton>

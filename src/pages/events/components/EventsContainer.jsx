@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 const EventsContainer = ({ title, description, imgSrc }) => {
   return (
     <div
-      className={`min-h-[75vh] md:min-h-[85vh] border-2 border-red-700 p-4 md:p-5 rounded-3xl text-center space-y-5 backdrop-blur hover:bg-red`}
+      className={`border-2 min-h-[78vh] md:min-h-[88vh] border-red-700 p-4 md:p-5 rounded-3xl text-center space-y-5 backdrop-blur hover:bg-red`}
     >
       <Swiper
         spaceBetween={10}

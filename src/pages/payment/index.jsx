@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Background from "../../assets/videos/RedFlareBackground.mp4";
+import { RegisterEvent } from "../../services/userService";
+import { toast } from "react-toastify";
+import { BsQuestionCircle } from "react-icons/bs";
+import ShowLanyard from "./modals/ShowLanyard";
 
 const Payment = () => {
-  const ticketPrice = 100000;
+  const location = useLocation();
+  const { ticketType, price: ticketPrice } = location.state || {};
   const lanyardPrice = 20000;
+  const navigate = useNavigate();
+
+  const [showModal, setShowModal] = useState(false);
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [addLanyard, setAddLanyard] = useState(false);
-  const [totalPrice, setTotalPrice] = useState(ticketPrice);
+  const [totalPrice, setTotalPrice] = useState(ticketPrice || 0);
 
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -16,6 +25,33 @@ const Payment = () => {
   const handleLanyardChange = () => {
     setAddLanyard(!addLanyard);
     setTotalPrice(!addLanyard ? ticketPrice + lanyardPrice : ticketPrice);
+  };
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/login");
+    }
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    toast.info("Registering event...");
+
+    // Create FormData object
+    const formData = new FormData();
+    formData.append("image", selectedFile);
+    formData.append("price", totalPrice);
+    formData.append("additional", addLanyard ? 1 : 0);
+
+    try {
+      const response = await RegisterEvent(formData);
+      toast.success("Event registered successfully!");
+      navigate("/dashboard");
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to register event");
+    }
   };
 
   return (
@@ -37,15 +73,13 @@ const Payment = () => {
             Complete your payment by transferring to the account details below.
           </p>
           <div className="text-sm md:text-base lg:text-lg">
-            <p>Bank Name: BNI</p>
-            <p>Account Holder: TEDx UNS</p>
-            <p>Account Number: 123456789</p>
+            <p>Bank Name: GoPay</p>
+            <p>Account Holder: Cikal Kholifiyanti</p>
+            <p>Account Number: 088226435948</p>
             <p className="font-bold">
               Ticket Price: Rp. {ticketPrice.toLocaleString("id-ID")}
             </p>
           </div>
-
-          {/* Lanyard Option */}
           <div className="space-y-2">
             <label className="flex items-center text-sm md:text-base lg:text-lg">
               <input
@@ -54,18 +88,19 @@ const Payment = () => {
                 onChange={handleLanyardChange}
                 className="appearance-none h-4 w-4 bg-black border border-red-500 checked:bg-red-700 checked:border-red-700 focus:outline-none mr-2"
               />
-              <span>
+              <span className="flex items-center gap-2">
                 Add exclusive TEDx UNS lanyard? (+Rp.{" "}
                 {lanyardPrice.toLocaleString("id-ID")})
+                <BsQuestionCircle
+                  className="text-[#bfbfbf] cursor-pointer hover:text-red"
+                  onClick={() => setShowModal(true)}
+                />
               </span>
             </label>
           </div>
-
-          {/* Total Amount */}
           <div className="font-bold text-lg md:text-xl lg:text-2xl">
             Total Amount: Rp. {totalPrice.toLocaleString("id-ID")}
           </div>
-
           <p className="text-sm md:text-base lg:text-lg">
             Please upload your payment receipt for confirmation.
           </p>
@@ -82,19 +117,26 @@ const Payment = () => {
                 hover:file:bg-red-800"
             />
           </div>
-
+          <h5 className="text-red text-[12px]">* Maximum upload size is 2MB, and the file must be an image (jpg, jpeg, png).</h5>
           <div className="flex justify-center">
             <button
               className={`text-white bg-red-700 px-8 py-2 rounded-xl hover:bg-red-800 mt-2 ${
                 !selectedFile ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={!selectedFile}
+              onClick={handleSubmit}
             >
               Submit Proof of Payment
             </button>
           </div>
         </div>
       </div>
+      {showModal && (
+        <ShowLanyard
+          isVisible={showModal}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </div>
   );
 };
