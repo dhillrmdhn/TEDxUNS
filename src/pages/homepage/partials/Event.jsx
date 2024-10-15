@@ -6,7 +6,7 @@ import { CountUser } from "../../../services/userService";
 
 const Event = () => {
   const navigate = useNavigate();
-  const [totalUsers, setTotalUsers] = useState(0);
+  const [totalUsers, setTotalUsers] = useState(19);
   const [ticketType, setTicketType] = useState("");
 
   useEffect(() => {
@@ -22,27 +22,24 @@ const Event = () => {
       const currentYear = currentDate.getFullYear();
 
       if (
-        totalUsers <= 20 &&
-        currentYear === 2024 &&
-        currentMonth === 10 &&
-        currentDay >= 10 &&
-        currentDay <= 12
+        totalUsers < 20 &&
+        (currentYear === 2024 && currentMonth === 10 && currentDay < 15)
       ) {
         setTicketType("earlyBird");
       } else if (
-        totalUsers > 20 &&
-        totalUsers <= 30 &&
+        totalUsers >= 20 &&
+        totalUsers < 30 &&
         currentYear === 2024 &&
         currentMonth === 10 &&
-        currentDay >= 13 &&
-        currentDay <= 17
+        currentDay >= 15 &&
+        currentDay <= 19
       ) {
         setTicketType("presale");
       } else if (
-        totalUsers <= 50 &&
+        totalUsers >= 30 &&
         currentYear === 2024 &&
         currentMonth === 10 &&
-        currentDay >= 18
+        currentDay >= 19
       ) {
         setTicketType("normalPrice");
       } else {
@@ -112,7 +109,8 @@ const Event = () => {
         <div className="w-full flex flex-col lg:flex-row justify-between space-y-8">
           <div className="flex flex-col justify-between space-y-6 lg:space-y-0">
             <h3 className="text-[24px] sm:text-[30px] font-bold">
-              TEDxSebelas Maret University 2024: <br /> Behind the X-ynergy: <br />
+              TEDxSebelas Maret University 2024: <br /> Behind the X-ynergy:{" "}
+              <br />
               Uncovering Both Sides
             </h3>
             <EventDate />

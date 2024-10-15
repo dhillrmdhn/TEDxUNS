@@ -7,6 +7,7 @@ const TableMember = () => {
   const columns = [
     { Header: "Nama", accessor: "fullname" },
     { Header: "Email", accessor: "email" },
+    { Header: "Phone", accessor: "phone" },
     { Header: "Status", accessor: "status" },
     { Header: "Payment Status", accessor: "paymentStatus" },
     { Header: "Presensi", accessor: "presence" },
@@ -35,8 +36,15 @@ const TableMember = () => {
                 ? "Declined"
                 : "Need Confirmation"
               : "-",
-            presence: user.presence ? "Present" : "Absent",
+            presence:
+              user.presence == null
+                ? "-"
+                : user.presence?.presence == 1
+                ? "Present"
+                : "Absent",
+            phone: user.phone,
           }));
+        console.log(users);
         setData(users);
         toast.dismiss();
       } catch (error) {

@@ -13,6 +13,7 @@ const Profile = () => {
         const response = await GetUserById();
         const { password, ...userData } = response.user;
         setData(userData);
+        console.log(userData);
       } catch (error) {
         console.log(error);
       }
@@ -27,10 +28,9 @@ const Profile = () => {
     {
       name: "phone",
       label: "Phone Number",
-      value: data?.phone_number,
+      value: data?.phone,
     },
-    { name: "university", label: "University", value: data?.university },
-    { name: "born", label: "Born", value: data?.born, type: "date" },
+    { name: "datebirth", label: "Born", value: data?.datebirth, type: "date" },
   ];
 
   const handleChange = (e) => {
@@ -40,6 +40,8 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     toast.info("Updating profile...");
+
+    console.log(data);
     try {
       const response = await updateUser(data);
       if (response) {
@@ -53,7 +55,6 @@ const Profile = () => {
       console.log(error);
       toast.error("Failed to update profile");
     }
-    console.log(data);
   };
 
   return (
@@ -77,10 +78,14 @@ const Profile = () => {
               {field.label}
             </InputText>
           ))}
+          <div className="w-full flex items-end">
+            <div className="w-full">
+              <RedButton className={"w-full"} onClick={handleSubmit}>
+                Save Profile
+              </RedButton>
+            </div>
+          </div>
         </form>
-        <div className="w-full flex justify-center">
-          <RedButton onClick={handleSubmit}>Save Profile</RedButton>
-        </div>
       </div>
     </div>
   );

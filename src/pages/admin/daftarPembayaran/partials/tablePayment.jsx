@@ -75,14 +75,17 @@ const TablePayment = () => {
 
   const getActionButtons = (item) => {
     switch (item.paymentStatus) {
-      case "Waiting":
+      case "Need Confirmation":
         return (
           <div className="space-x-2 flex">
             <RedButton onClick={() => handleConfirm(item.id_payment)}>
               Confirm
             </RedButton>
+            <RedButton onClick={() => handleCancelPayment(item.id_payment)}>
+              Cancel
+            </RedButton>
             <WhiteButton onClick={() => handleViewProof(item)}>
-              View Proof
+              View
             </WhiteButton>
           </div>
         );
@@ -93,14 +96,14 @@ const TablePayment = () => {
               Re-Confirm
             </RedButton>
             <WhiteButton onClick={() => handleViewProof(item)}>
-              View Proof
+              View
             </WhiteButton>
           </div>
         );
       case "Paid":
         return (
           <RedButton onClick={() => handleCancelPayment(item.id_payment)}>
-            Cancel Payment
+            Cancel
           </RedButton>
         );
       case "-":
@@ -172,7 +175,10 @@ const TablePayment = () => {
     <div className="space-y-10">
       <div>
         <h3 className="text-[25px] font-bold mb-2">Waiting for Verification</h3>
-        <Table columns={columns} data={filterData({ status: "Waiting" })} />
+        <Table
+          columns={columns}
+          data={filterData({ status: "Need Confirmation" })}
+        />
       </div>
       <div>
         <h3 className="text-[25px] font-bold mb-2">Paid</h3>

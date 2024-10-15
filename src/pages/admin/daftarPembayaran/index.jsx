@@ -14,7 +14,7 @@ const DaftarPembayaran = () => {
         <TablePayment />
       </div>
       <button
-        className="text-white bg-red-700 px-8 py-2 rounded-xl hover:bg-red-800 mt-2"
+        className="text-white bg-red-700 px-8 py-2 rounded-xl hover:bg-red-800 mt-6"
         onClick={() => nav("/admin")}
       >
         Back to Dashboard

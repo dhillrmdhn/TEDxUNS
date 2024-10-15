@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Background from "../../assets/videos/RedFlareBackground.mp4";
-import { RegisterEvent } from "../../services/userService";
+import { GetUserById, RegisterEvent } from "../../services/userService";
 import { toast } from "react-toastify";
 import { BsQuestionCircle } from "react-icons/bs";
 import ShowLanyard from "./modals/ShowLanyard";
+import ShowProfile from "./modals/ShowProfile";
 
 const Payment = () => {
   const location = useLocation();
@@ -13,14 +14,33 @@ const Payment = () => {
   const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [addLanyard, setAddLanyard] = useState(false);
   const [totalPrice, setTotalPrice] = useState(ticketPrice || 0);
 
+  const [user, setUser] = useState([]);
+
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
   };
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const res = await GetUserById();
+        if (res.user.phone == null) {
+          setShowProfile(true);
+          console.log("masuk");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getData();
+  }, []);
 
   const handleLanyardChange = () => {
     setAddLanyard(!addLanyard);
@@ -37,7 +57,6 @@ const Payment = () => {
     e.preventDefault();
     toast.info("Registering event...");
 
-    // Create FormData object
     const formData = new FormData();
     formData.append("image", selectedFile);
     formData.append("price", totalPrice);
@@ -117,7 +136,10 @@ const Payment = () => {
                 hover:file:bg-red-800"
             />
           </div>
-          <h5 className="text-red text-[12px]">* Maximum upload size is 2MB, and the file must be an image (jpg, jpeg, png).</h5>
+          <h5 className="text-red text-[12px]">
+            * Maximum upload size is 2MB, and the file must be an image (jpg,
+            jpeg, png).
+          </h5>
           <div className="flex justify-center">
             <button
               className={`text-white bg-red-700 px-8 py-2 rounded-xl hover:bg-red-800 mt-2 ${
@@ -135,6 +157,12 @@ const Payment = () => {
         <ShowLanyard
           isVisible={showModal}
           onClose={() => setShowModal(false)}
+        />
+      )}
+      {showProfile && (
+        <ShowProfile
+          isVisible={showProfile}
+          onClose={() => setShowProfile(false)}
         />
       )}
     </div>

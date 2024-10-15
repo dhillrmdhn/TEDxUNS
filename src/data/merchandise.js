@@ -7,7 +7,7 @@ import Bundling3 from "@images/merchandise/Bundling-3.svg";
 import Sticker from "@images/merchandise/StickerPack.svg";
 import BaseballCap from "@images/merchandise/BaseballCap.svg";
 import Kaos1 from "@images/merchandise/Kaos-1.svg";
-import Kaos2 from "@images/merchandise/Kaos-2.svg"
+import Kaos2 from "@images/merchandise/Kaos-2.svg";
 
 export const merchandise = [
   {
@@ -15,9 +15,7 @@ export const merchandise = [
     name: "T-Shirt TEDx Special Edition",
     description:
       "Unleash your passion for ideas with our TEDx UNS Special Edition t-shirt. This exclusive design embodies the essence of creativity and collaboration—perfect for those who dare to think differently!",
-    imgSrc: [
-      Kaos1, Kaos2
-    ],
+    imgSrc: [Kaos1, Kaos2],
     price: "Rp. 80.000",
   },
   {
@@ -25,9 +23,7 @@ export const merchandise = [
     name: "Keychain TEDx Special Edition",
     description:
       "Unlock your potential with the TEDx UNS Special Edition keychain! This unique accessory not only keeps your keys organized but also symbolizes your commitment to spreading transformative ideas.",
-    imgSrc: [
-      Keychain, 
-    ],
+    imgSrc: [Keychain],
     price: "Rp. 8.000",
   },
   {
@@ -42,7 +38,7 @@ export const merchandise = [
     id: 4,
     name: "Sticker Pack TEDx Special Edition",
     description:
-      "Unleash your creativity with the TEDx UNS Special Edition sticker pack! Packed with vibrant designs and inspiring messages, these stickers are perfect for personalizing your belongings and spreading ideas worth sharing!",
+      "Unleash your creativity with the TEDx UNS Special Edition sticker pack! Packed with vibrant designs and inspiring messages, these stickers are perfect for personalizing your belongings and spreading ideas worth sharing! You will get 6 stickers here!",
     imgSrc: [Sticker],
     price: "Rp. 10.000",
   },
@@ -59,11 +55,7 @@ export const merchandise = [
     name: "Bundling Package",
     description:
       "Unlock the ultimate experience with our TEDx UNS Special Edition bundle! Combining exclusive items like a stylish tote bag, inspiring stickers, and a trendy cap, this package is designed for those who embrace innovation and creativity in every aspect of their lives.",
-    imgSrc: [
-      Bundling,
-      Bundling2,
-      Bundling3,
-    ],
+    imgSrc: [Bundling, Bundling2, Bundling3],
     price: "",
   },
 ];

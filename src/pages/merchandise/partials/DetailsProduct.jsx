@@ -8,7 +8,7 @@ SwiperCore.use([Navigation, Pagination]);
 
 const DetailsProduct = ({ product }) => {
   return (
-    <div className="flex flex-col border-2 border-red-700 rounded-3xl p-2 md:p-6 gap-5 bg-black">
+    <div className="flex flex-col items-center border-2 border-red-700 rounded-3xl p-2 md:p-6 gap-5 bg-black">
       <div className="h-[40vh] w-full md:h-[70vh] md:w-[120vh] rounded-3xl">
         <Swiper spaceBetween={10} navigation className="h-full rounded-3xl">
           {product.imgSrc.map((src, index) => (
@@ -31,7 +31,7 @@ const DetailsProduct = ({ product }) => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <h3 className="text-h5 md:text-h4 font-bold">{product.price}</h3>
             <a
-              href="uns.id/MerchTEDxUNS"
+              href="https://uns.id/MerchTEDxUNS" target="_blank"
               className="px-4 py-2 md:px-6 md:py-2 rounded-xl bg-red font-semibold cursor-pointer hover:bg-red-900 transition duration-300 flex justify-center items-center"
             >
               Order Here
