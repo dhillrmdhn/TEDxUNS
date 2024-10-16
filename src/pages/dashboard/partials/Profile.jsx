@@ -13,7 +13,6 @@ const Profile = () => {
         const response = await GetUserById();
         const { password, ...userData } = response.user;
         setData(userData);
-        console.log(userData);
       } catch (error) {
         console.log(error);
       }

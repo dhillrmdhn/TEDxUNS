@@ -1,6 +1,10 @@
 import React from "react";
+import QRCode from "react-qr-code";
 
 const QRTicket = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const url = `/presence/${user.id}`
+
   return (
     <div className="text-white flex flex-col space-y-10 w-full justify-center items-center">
       <div>
@@ -10,10 +14,7 @@ const QRTicket = () => {
       </div>
       <div className="text-center space-y-4">
         <div className="bg-white rounded-3xl">
-          <img
-            src="https://i.ibb.co.com/87zC5Yw/QR-code-for-mobile-English-Wikipedia-svg.png"
-            alt=""
-          />
+          <QRCode value={url} style={{ padding: "20px" }} />
         </div>
         <p className="text-[#bfbfbf] text-[18px]">Scan at the venue</p>
       </div>

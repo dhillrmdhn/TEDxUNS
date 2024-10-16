@@ -53,3 +53,17 @@ export const PaymentDecline = async (id) => {
     console.log(error);
   }
 };
+
+export const PresenceUser = async (id) => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await axiosInstance.put(`/presence/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

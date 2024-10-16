@@ -16,9 +16,11 @@ import DaftarPeserta from "./pages/admin/daftarPeserta";
 import DaftarPembayaran from "./pages/admin/daftarPembayaran";
 import DetailEvents from "./pages/detailEvents";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import FeatureSoon from "./pages/soon/featureSoon";
 import ScrollToTop from "./utils/ScrollToTop";
+import PresensiKehadiran from "./pages/admin/presensi-kehadiran";
+import PresenceService from "./pages/admin/presensi-kehadiran/services/PresenceService";
 
 const App = () => {
   return (
@@ -49,7 +51,18 @@ const App = () => {
         />
         <Route path="/admin/*" element={<DashboardAdmin />} />
         <Route path="/admin/daftar-peserta" element={<DaftarPeserta />} />
-        <Route path="/admin/verifikasi-pembayaran" element={<DaftarPembayaran />} />
+        <Route
+          path="/admin/verifikasi-pembayaran"
+          element={<DaftarPembayaran />}
+        />
+        <Route
+          path="/admin/presensi-kehadiran"
+          element={<PresensiKehadiran />}
+        />
+        <Route
+          path="admin/presensi-kehadiran/presence/:id"
+          element={<PresenceService />}
+        />
       </Routes>
     </Router>
   );
