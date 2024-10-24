@@ -23,12 +23,14 @@ const Event = () => {
 
       if (
         totalUsers < 20 &&
-        (currentYear === 2024 && currentMonth === 10 && currentDay < 15)
+        currentYear === 2024 &&
+        currentMonth === 10 &&
+        currentDay < 15
       ) {
         setTicketType("earlyBird");
       } else if (
         totalUsers >= 20 &&
-        totalUsers < 30 &&
+        totalUsers <= 50 &&
         currentYear === 2024 &&
         currentMonth === 10 &&
         currentDay >= 15 &&
@@ -36,10 +38,9 @@ const Event = () => {
       ) {
         setTicketType("presale");
       } else if (
-        totalUsers >= 30 &&
         currentYear === 2024 &&
         currentMonth === 10 &&
-        currentDay >= 19
+        currentDay >= 20
       ) {
         setTicketType("normalPrice");
       } else {
@@ -55,7 +56,7 @@ const Event = () => {
     const ticketPrices = {
       earlyBird: 55000,
       presale: 70000,
-      normalPrice: 80000,
+      normalPrice: 85000,
     };
 
     const price = ticketPrices[ticketType] || 0;
@@ -106,14 +107,18 @@ const Event = () => {
         <h1 className="text-h5 sm:text-h4 font-bold">
           Are you ready for our <span className="text-red">Main Event?</span>
         </h1>
-        <div className="w-full flex flex-col lg:flex-row justify-between space-y-8">
-          <div className="flex flex-col justify-between space-y-6 lg:space-y-0">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-center space-y-8">
+          <div className="flex flex-col justify-between space-y-6 lg:space-y-5">
             <h3 className="text-[24px] sm:text-[30px] font-bold">
               TEDxSebelas Maret University 2024: <br /> Behind the X-ynergy:{" "}
               <br />
               Uncovering Both Sides
             </h3>
             <EventDate />
+            <p className="text-sm md:text-base lg:text-lg font-bold">
+              You will receive: Live TED Talks, Entertainment, Lunch, <br /> and an
+              exclusive pin
+            </p>
             {renderButton()}
           </div>
           <Maps />

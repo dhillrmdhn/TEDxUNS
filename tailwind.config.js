@@ -37,6 +37,7 @@ export default {
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)), url('/src/assets/images/background/MainEventBackground.jpg')",
         "speakers-section":
           "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url('/src/assets/images/background/SpeakersBackground.jpg')",
+        "tickets": "url('/src/assets/images/ETicker.svg')",
       },
     },
   },

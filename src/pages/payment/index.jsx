@@ -74,7 +74,7 @@ const Payment = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white space-y-6 mt-10 relative">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-black text-white space-y-6 mt-10 relative py-10">
       <video
         src={Background}
         autoPlay
@@ -99,6 +99,7 @@ const Payment = () => {
               Ticket Price: Rp. {ticketPrice.toLocaleString("id-ID")}
             </p>
           </div>
+          <p className="text-sm md:text-base lg:text-lg font-bold" >You will receive: Live TED Talks, Entertainment, Lunch, and an exclusive pin</p>
           <div className="space-y-2">
             <label className="flex items-center text-sm md:text-base lg:text-lg">
               <input

@@ -1,9 +1,10 @@
 import React from "react";
+import QRTicketDisplay from "../components/QRTicket";
 import QRCode from "react-qr-code";
 
 const QRTicket = () => {
   const user = JSON.parse(localStorage.getItem("user"));
-  const url = `/presence/${user.id}`
+  const url = `${user.id}`;
 
   return (
     <div className="text-white flex flex-col space-y-10 w-full justify-center items-center">
@@ -12,11 +13,8 @@ const QRTicket = () => {
           Your <span className="text-red-700">Tickets</span>
         </h3>
       </div>
-      <div className="text-center space-y-4">
-        <div className="bg-white rounded-3xl">
-          <QRCode value={url} style={{ padding: "20px" }} />
-        </div>
-        <p className="text-[#bfbfbf] text-[18px]">Scan at the venue</p>
+      <div>
+        <QRTicketDisplay name={user.fullname} url={url} />
       </div>
     </div>
   );

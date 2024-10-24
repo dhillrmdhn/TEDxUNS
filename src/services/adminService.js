@@ -54,14 +54,32 @@ export const PaymentDecline = async (id) => {
   }
 };
 
-export const PresenceUser = async (id) => {
+export const GetUserAdminByID = async (id) => {
   try {
     const token = localStorage.getItem("token");
-    const response = await axiosInstance.put(`/presence/${id}`, {
+    const response = await axiosInstance.get(`/getUserAdmin/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const PresenceUser = async (id) => {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await axiosInstance.put(
+      `/presence/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return response.data;
   } catch (error) {
     console.log(error);

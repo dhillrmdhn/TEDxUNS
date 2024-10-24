@@ -60,7 +60,7 @@ const App = () => {
           element={<PresensiKehadiran />}
         />
         <Route
-          path="admin/presensi-kehadiran/presence/:id"
+          path="presence/:id"
           element={<PresenceService />}
         />
       </Routes>
