@@ -13,7 +13,7 @@ const QRTicket = () => {
           Your <span className="text-red-700">Tickets</span>
         </h3>
       </div>
-      <div>
+      <div className="flex flex-col space-x-10">
         <QRTicketDisplay name={user.fullname} url={url} />
       </div>
     </div>

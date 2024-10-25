@@ -68,8 +68,12 @@ const Payment = () => {
       navigate("/dashboard");
       window.location.reload();
     } catch (error) {
-      console.log(error);
-      toast.error("Failed to register event");
+      console.log(error.response.status);
+      if (error.response.status === 404) {
+        toast.error("User Already Registered");
+      } else {
+        toast.error("Failed to register event");
+      }
     }
   };
 
@@ -95,11 +99,15 @@ const Payment = () => {
             <p>Bank Name: GoPay</p>
             <p>Account Holder: Cikal Kholifiyanti</p>
             <p>Account Number: 088226435948</p>
-            <p className="font-bold">
+            {/* <p className="font-bold">
               Ticket Price: Rp. {ticketPrice.toLocaleString("id-ID")}
-            </p>
+            </p> */}
+            <p className="font-bold">Ticket Price: Rp. 85.000</p>
           </div>
-          <p className="text-sm md:text-base lg:text-lg font-bold" >You will receive: Live TED Talks, Entertainment, Lunch, and an exclusive pin</p>
+          <p className="text-sm md:text-base lg:text-lg font-bold">
+            You will receive: Live TED Talks, Entertainment, Lunch, and an
+            exclusive pin
+          </p>
           <div className="space-y-2">
             <label className="flex items-center text-sm md:text-base lg:text-lg">
               <input
@@ -118,8 +126,15 @@ const Payment = () => {
               </span>
             </label>
           </div>
-          <div className="font-bold text-lg md:text-xl lg:text-2xl">
+          {/* <div className="font-bold text-lg md:text-xl lg:text-2xl">
             Total Amount: Rp. {totalPrice.toLocaleString("id-ID")}
+          </div> */}
+          <div className="font-bold text-lg md:text-xl lg:text-2xl">
+            Total Amount: Rp.{" "}
+            <span className="line-through font-normal">
+              {(totalPrice + 10000).toLocaleString("id-ID")}
+            </span>{" "}
+            {totalPrice.toLocaleString("id-ID")}
           </div>
           <p className="text-sm md:text-base lg:text-lg">
             Please upload your payment receipt for confirmation.

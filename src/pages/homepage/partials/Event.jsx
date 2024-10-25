@@ -56,7 +56,7 @@ const Event = () => {
     const ticketPrices = {
       earlyBird: 55000,
       presale: 70000,
-      normalPrice: 85000,
+      normalPrice: 75000,
     };
 
     const price = ticketPrices[ticketType] || 0;
@@ -89,7 +89,7 @@ const Event = () => {
               navigate("/payment", { state: { ticketType, price } });
             }}
           >
-            Grab your tickets today! Register now!
+            Special price today only! Grab it now!
           </RedButton>
         );
       default:

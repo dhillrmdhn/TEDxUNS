@@ -22,7 +22,7 @@ const Form = () => {
 
     if (isValid) {
       setIsLoading(true);
-      toast.info("Loading... Please wait")
+      toast.info("Loading... Please wait");
 
       try {
         const response = await register(data);

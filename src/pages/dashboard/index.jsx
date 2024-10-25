@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import PaymentDecline from "./partials/PaymentDecline";
 import { GetUserById } from "../../services/userService";
 import { logout } from "../../services/authService";
+import Rundown from "./partials/Rundown";
+import RundownPage from "./partials/Rundown";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -71,7 +73,12 @@ const Dashboard = () => {
       <div className="flex flex-col items-center space-y-5 md:space-y-10">
         <Event />
         <Profile data={data} />
-        {isPayment && <QRTicket />}
+        {isPayment && (
+          <div className="flex flex-col space-y-5 items-center">
+            <QRTicket />
+            <RundownPage />
+          </div>
+        )}
         <button
           className="text-white bg-red-700 px-8 py-2 rounded-xl font-bold hover:bg-red-800"
           onClick={handleLogout}
