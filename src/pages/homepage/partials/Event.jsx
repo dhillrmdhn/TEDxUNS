@@ -56,7 +56,7 @@ const Event = () => {
     const ticketPrices = {
       earlyBird: 55000,
       presale: 70000,
-      normalPrice: 75000,
+      normalPrice: 85000,
     };
 
     const price = ticketPrices[ticketType] || 0;

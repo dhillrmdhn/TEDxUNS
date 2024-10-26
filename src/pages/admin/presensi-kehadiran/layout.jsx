@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Layout = () => {
   const [attendeeData, setAttendeeData] = useState(null);
   const [userData, setUserData] = useState(null);
+  const [error, setError] = useState(null);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const Layout = () => {
           const response = await GetUserAdminByID(attendeeData);
           setUserData(response.user);
         } catch (error) {
-          console.error(error);
+          console.error(error.response.status);
         }
       };
 
@@ -46,13 +47,26 @@ const Layout = () => {
                 Phone Number:{" "}
                 <span className="font-bold">{userData?.phone} </span>
               </p>
+              <p className="text-[24px]">
+                Additional Lanyard:{" "}
+                <span className="font-bold">
+                  {userData?.payment?.additional === 1 ? "Yes" : "No"}{" "}
+                </span>
+              </p>
             </div>
           </div>
         )}
         {attendeeData === 400 && (
           <div className="bg-red-500 w-full rounded-xl p-5 space-y-5">
             <h1 className="text-h5 font-bold text-center">
-              Failed to mark attendance
+              User Already Present
+            </h1>
+          </div>
+        )}
+        {attendeeData === 404 && (
+          <div className="bg-red-500 w-full rounded-xl p-5 space-y-5">
+            <h1 className="text-h5 font-bold text-center">
+              User already present
             </h1>
           </div>
         )}
